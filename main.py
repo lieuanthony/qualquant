@@ -1,5 +1,5 @@
-from dotenv import load_dotenv
 from datetime import datetime
+from dotenv import load_dotenv
 from lumibot.backtesting import YahooDataBacktesting, BacktestingBroker
 from lumibot.brokers import Alpaca
 from lumibot.strategies import Strategy
@@ -30,22 +30,22 @@ backtesting_start = datetime(2020, 11, 1)
 backtesting_end = datetime(2020, 12, 31)
 
 if __name__ == "__main__":
-    trade = False
-    if trade:
+    # trade = False
+    # if trade:
         broker = Alpaca(ALPACA_CONFIG)
         strategy = BuyHold(broker=broker)
         trader = Trader()
         trader.add_strategy(strategy)
         trader.run_all()
-    else:
-        trader = Trader(backtest=True)
-        data_source = YahooDataBacktesting(
-        datetime_start=backtesting_start,
-        datetime_end=backtesting_end,
-        )
-        broker = BacktestingBroker(data_source)
-        strat = BuyHold(
-        broker=broker,
-        )
-trader.add_strategy(strat)
-trader.run_all()
+    # else:
+    #     trader = Trader(backtest=True)
+    #     data_source = YahooDataBacktesting(
+    #         datetime_start=backtesting_start,
+    #         datetime_end=backtesting_end,
+    #     )
+    #     broker = BacktestingBroker(data_source)
+    #     strat = BuyHold(
+    #         broker=broker,
+    #     )
+    #     trader.add_strategy(strat)
+    #     trader.run_all()
