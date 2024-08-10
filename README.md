@@ -1,1 +1,1 @@
-# AlgoTrader_v2
+# AlgoTrader-v2
