@@ -1,13 +1,16 @@
+from dotenv import load_dotenv
 from datetime import datetime
 from lumibot.backtesting import YahooDataBacktesting, BacktestingBroker
 from lumibot.brokers import Alpaca
 from lumibot.strategies import Strategy
 from lumibot.traders import Trader
+import os
 
+load_dotenv()
 ALPACA_CONFIG = {
-    "API_KEY": "PKIW7PRBQM0V81UBAJIF",
-    "API_SECRET": "hAI8OcHdSxnrCLchS7fZbfZHQHbac0MnvhGpzytv",
-    "PAPER": True
+    "API_KEY": os.getenv("API_KEY"),
+    "API_SECRET": os.getenv("API_SECRET"),
+    "PAPER": True 
 }
 
 class BuyHold(Strategy):
