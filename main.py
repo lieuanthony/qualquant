@@ -26,26 +26,30 @@ class BuyHold(Strategy):
             order = self.create_order(symbol, quantity, "buy")
             self.submit_order(order)
 
-backtesting_start = datetime(2020, 11, 1)
-backtesting_end = datetime(2020, 12, 31)
+def main() -> None:
 
-if __name__ == "__main__":
-    # trade = False
-    # if trade:
+    backtesting_start = datetime(2020, 11, 1)
+    backtesting_end = datetime(2020, 12, 31)
+
+    trade = True
+    if trade:
         broker = Alpaca(ALPACA_CONFIG)
         strategy = BuyHold(broker=broker)
         trader = Trader()
         trader.add_strategy(strategy)
         trader.run_all()
-    # else:
-    #     trader = Trader(backtest=True)
-    #     data_source = YahooDataBacktesting(
-    #         datetime_start=backtesting_start,
-    #         datetime_end=backtesting_end,
-    #     )
-    #     broker = BacktestingBroker(data_source)
-    #     strat = BuyHold(
-    #         broker=broker,
-    #     )
-    #     trader.add_strategy(strat)
-    #     trader.run_all()
+    else:
+        trader = Trader(backtest=True)
+        data_source = YahooDataBacktesting(
+            datetime_start=backtesting_start,
+            datetime_end=backtesting_end,
+        )
+        broker = BacktestingBroker(data_source)
+        strat = BuyHold(
+            broker=broker,
+        )
+        trader.add_strategy(strat)
+        trader.run_all()
+
+if __name__ == "__main__":
+    main()
