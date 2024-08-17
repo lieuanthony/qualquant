@@ -17,4 +17,4 @@ RUN pip install python-dotenv
 COPY .env .env
 
 # Run the Python script
-CMD ["python", "./main.py"]
+CMD ["python", "./trading.py"]
