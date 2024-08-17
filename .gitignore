@@ -6,3 +6,6 @@
 
 # Ignore logs directory
 logs/
+
+# Ignore tickers.txt file
+tickers.txt
