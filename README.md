@@ -14,7 +14,7 @@ This Python-based `AlgoTrader-v2` is designed to fetch market data and execute p
 - **`Dockerfile`**: Contains the instructions to build the Docker image for the project.
 - **`strategy.py`**: The main script that fetches data and executes trades. The trading strategy is implemented here but is not exposed to the public.
 - **`.github/workflows/start-algotrader-v2.yml`**: GitHub Actions workflow to start the bot before market open (9:25 AM EST).
-- **`.github/workflows/stop-algotrader-v2.yml`**: GitHub Actions workflow to stop the bot at after trades are executed (9:35 AM EST).
+- **`.github/workflows/stop-algotrader-v2.yml`**: GitHub Actions workflow to stop the bot after trades are executed (9:35 AM EST).
 
 ## Dependencies
 
