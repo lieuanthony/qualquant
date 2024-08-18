@@ -2,7 +2,7 @@ name: Start AlgoTrader-v2
 
 on:
   schedule:
-    - cron: '27 14 * * 1-5'  # Runs every weekday at 14:27 UTC (9:27 AM EST)
+    - cron: '25 14 * * 1-5'  # Runs every weekday at 14:25 UTC (9:25 AM EST)
 
 jobs:
   start:
