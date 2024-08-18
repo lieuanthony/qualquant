@@ -13,8 +13,8 @@ This Python-based `AlgoTrader-v2` is designed to fetch market data and execute p
 
 - **`Dockerfile`**: Contains the instructions to build the Docker image for the project.
 - **`strategy.py`**: The main script that fetches data and executes trades. The trading strategy is implemented here but is not exposed to the public.
-- **`.github/workflows/start-algotrader-v2.yml`**: GitHub Actions workflow to start the bot at market open (9:30 AM EST).
-- **`.github/workflows/stop-algotrader-v2.yml`**: GitHub Actions workflow to stop the bot at market close (4:00 PM EST).
+- **`.github/workflows/start-algotrader-v2.yml`**: GitHub Actions workflow to start the bot before market open (9:25 AM EST).
+- **`.github/workflows/stop-algotrader-v2.yml`**: GitHub Actions workflow to stop the bot at after trades are executed (9:35 AM EST).
 
 ## Dependencies
 
@@ -28,7 +28,7 @@ The following key dependencies are used in this project:
 
 1. **Market Data Fetching**: The bot uses the Alpaca Markets API to fetch real-time market data.
 2. **Trading Execution**: Based on the proprietary strategy, the bot decides which trades to execute during market hours.
-3. **Automated Scheduling**: The bot starts automatically at 9:30 AM EST and stops at 4:00 PM EST, thanks to GitHub Actions.
+3. **Automated Scheduling**: The bot starts automatically at 9:25 AM EST and stops at 9:35 AM EST, thanks to GitHub Actions.
 4. **Backtesting**: The LumiBot API allows for comprehensive backtesting of the strategy, using historical data to validate its effectiveness.
 
 ## Security
