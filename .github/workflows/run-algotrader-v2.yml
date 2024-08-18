@@ -1,0 +1,24 @@
+name: Start AlgoTrader-v2
+
+on:
+  schedule:
+    - cron: '30 14 * * 1-5'  # Runs every weekday at 14:30 UTC (9:30 AM EST)
+
+jobs:
+  start:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build Docker image
+        run: |
+          docker build -t algotrader-v2 .
+
+      - name: Run Docker container
+        run: |
+          docker run -d --name algotrader-v2 algotrader-v2  # Run container in detached mode

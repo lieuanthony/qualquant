@@ -1,0 +1,15 @@
+name: Stop AlgoTrader
+
+on:
+  schedule:
+    - cron: '0 21 * * 1-5'  # Runs every weekday at 21:00 UTC (4:00 PM EST)
+
+jobs:
+  stop:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Stop Docker container
+        run: |
+          docker stop algotrader-v2 || true  # Stop container if running
+          docker rm algotrader-v2 || true    # Remove container if exists
