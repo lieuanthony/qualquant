@@ -10,5 +10,5 @@ logs/
 #Ignore strategy.py file
 strategy.py
 
-# Ignore tickers.txt file
-tickers.txt
+# Ignore file.txt file
+file.txt
