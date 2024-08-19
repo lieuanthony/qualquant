@@ -12,6 +12,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Decrypt files
+        run: |
+          # Echo the decryption password to a file
+          echo "${{ secrets.DECRYPTION_PASSWORD }}" > decryption_password.txt
+          
+          # Decrypt the strategy file
+          openssl enc -d -aes-256-cbc -in strategy.py.enc -out strategy.py -pass file:./decryption_password.txt
+          
+          # Decrypt the stocks file
+          openssl enc -d -aes-256-cbc -in file.txt.enc -out file.txt -pass file:./decryption_password.txt
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
@@ -21,4 +32,8 @@ jobs:
 
       - name: Run Docker container
         run: |
-          docker run -d --name algotrader-v2 algotrader-v2  # Run container in detached mode
+          docker run -d \
+          --name algotrader-container \
+          -e API_KEY=${{ secrets.API_KEY }} \
+          -e API_SECRET=${{ secrets.API_SECRET }} \
+          algotrader-v2

@@ -1,4 +1,4 @@
-name: Stop AlgoTrader
+name: Stop AlgoTrader-v2
 
 on:
   schedule:
@@ -13,3 +13,10 @@ jobs:
         run: |
           docker stop algotrader-v2 || true  # Stop container if running
           docker rm algotrader-v2 || true    # Remove container if exists
+
+      - name: Clean up decrypted files
+        run: |
+          # Remove decrypted files if needed
+          rm -f strategy.py
+          rm -f file.txt
+          rm -f decryption_password.txt

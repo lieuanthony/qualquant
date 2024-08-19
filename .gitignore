@@ -6,3 +6,9 @@
 
 # Ignore logs directory
 logs/
+
+#Ignore file.txt file
+file.txt
+
+#Ignore strategy.py file
+strategy.py
