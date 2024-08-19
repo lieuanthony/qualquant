@@ -14,14 +14,11 @@ jobs:
 
       - name: Decrypt files
         run: |
-          # Echo the decryption password to a file
-          echo "${{ secrets.DECRYPTION_PASSWORD }}" > decryption_password.txt
-          
           # Decrypt the strategy file
-          openssl enc -d -aes-256-cbc -in strategy.py.enc -out strategy.py -pass file:./decryption_password.txt
+          openssl enc -d -aes-256-cbc -in strategy.py.enc -out strategy.py -pass pass:${{ secrets.DECRYPTION_PASSWORD }}
           
           # Decrypt the stocks file
-          openssl enc -d -aes-256-cbc -in file.txt.enc -out file.txt -pass file:./decryption_password.txt
+          openssl enc -d -aes-256-cbc -in file.txt.enc -out file.txt -pass pass:${{ secrets.DECRYPTION_PASSWORD }}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
