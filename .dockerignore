@@ -1,6 +1,7 @@
 .venv/
-.env
 logs/
 .git/
 .gitignore
 backtesting.py
+LICENSE
+README.md
