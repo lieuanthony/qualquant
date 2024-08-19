@@ -2,7 +2,7 @@ name: Stop AlgoTrader-v2
 
 on:
   schedule:
-    - cron: '33 13 * * 1-5'  # Runs every weekday at 13:33 UTC (9:33 AM EST)
+    - cron: '32 13 * * 1-5'  # Runs every weekday at 13:32 UTC (9:32 AM EST)
 
 jobs:
   stop:
