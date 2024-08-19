@@ -3,3 +3,4 @@
 logs/
 .git/
 .gitignore
+backtesting.py
