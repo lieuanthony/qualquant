@@ -1,12 +1,12 @@
 from lumibot.brokers import Alpaca
 from lumibot.traders import Trader
-from strategy import ALPACA_CONFIG, MyStrategy
+from strategies import ALPACA_CONFIG, StrategyA, StrategyB
 
 def main() -> None:
     broker = Alpaca(ALPACA_CONFIG)
-    strategy = MyStrategy(broker=broker)
-    trader = Trader()
-    trader.add_strategy(strategy)
+    strategy_a = StrategyA(broker=broker)
+    strategy_b = StrategyB(broker=broker)
+    trader = Trader(strategies=[strategy_a, strategy_b])
     trader.run_all()
 
 if __name__ == "__main__":

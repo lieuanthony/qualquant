@@ -1,5 +1,6 @@
 .venv/
 .env
 logs/
-file.txt
-strategy.py
+file_a.txt
+file_b.txt
+strategies.py
