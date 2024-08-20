@@ -1,6 +1,6 @@
 from lumibot.brokers import Alpaca
 from lumibot.traders import Trader
-from strategies import ALPACA_CONFIG, StrategyA
+from strategy import ALPACA_CONFIG, StrategyA
 
 def main() -> None:
     broker = Alpaca(ALPACA_CONFIG)

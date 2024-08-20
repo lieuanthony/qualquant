@@ -17,6 +17,6 @@ jobs:
       - name: Clean up decrypted files
         run: |
           # Remove decrypted files if needed
-          rm -f strategies.py
+          rm -f strategy.py
           rm -f file_a.txt
           rm -f file_b.txt

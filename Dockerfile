@@ -13,8 +13,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Make sure python-dotenv is installed
 RUN pip install python-dotenv
 
-# Make the .env file available to Docker
-COPY .env .env
-
 # Run the Python script
 CMD ["python", "./trading.py"]

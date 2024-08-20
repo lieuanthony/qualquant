@@ -1,7 +1,7 @@
 from datetime import datetime
 from lumibot.backtesting import YahooDataBacktesting, BacktestingBroker
 from lumibot.traders import Trader
-from strategies import StrategyA
+from strategy import StrategyA
 
 def main() -> None:
     backtesting_start = datetime(2023, 8, 15)

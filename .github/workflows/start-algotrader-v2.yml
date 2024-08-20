@@ -15,7 +15,7 @@ jobs:
       - name: Decrypt files
         run: |
           # Decrypt the strategies file
-          openssl enc -d -aes-256-cbc -in strategies.py.enc -out strategies.py -pass pass:${{ secrets.DECRYPTION_PASSWORD }}
+          openssl enc -d -aes-256-cbc -in strategy.py.enc -out strategy.py -pass pass:${{ secrets.DECRYPTION_PASSWORD }}
           
           # Decrypt the stocks files
           openssl enc -d -aes-256-cbc -in file_a.txt.enc -out file_a.txt -pass pass:${{ secrets.DECRYPTION_PASSWORD }}
@@ -31,7 +31,7 @@ jobs:
       - name: Run Docker container
         run: |
           docker run -d \
-          --name algotrader-container \
+          --name algotrader-v2-container \
           -e API_KEY=${{ secrets.API_KEY }} \
           -e API_SECRET=${{ secrets.API_SECRET }} \
           algotrader-v2
