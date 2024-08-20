@@ -20,7 +20,7 @@ def round_up_or_down(value: float) -> int:
 
     return result
 
-class StrategyA(Strategy):
+class MyStrategy(Strategy):
 
     def initialize(self):
         signal = None
