@@ -5,3 +5,4 @@ logs/
 backtesting.py
 LICENSE
 README.md
+__pycache__
