@@ -9,6 +9,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -35,3 +40,4 @@ jobs:
           -e API_KEY=${{ secrets.API_KEY }} \
           -e API_SECRET=${{ secrets.API_SECRET }} \
           algotrader-v2
+
