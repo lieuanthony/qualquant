@@ -11,8 +11,8 @@ jobs:
     steps:
       - name: Stop Docker container
         run: |
-          docker stop algotrader-v2 || true  # Stop container if running
-          docker rm algotrader-v2 || true    # Remove container if exists
+          docker stop algotrader-v2-container || true  # Stop container if running
+          docker rm algotrader-v2-container || true    # Remove container if exists
 
       - name: Clean up decrypted files
         run: |
