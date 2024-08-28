@@ -4,17 +4,8 @@ from lumibot.traders import Trader
 from strategy import MyStrategy
 
 def main() -> None:
-    backtesting_start = datetime(2023, 8, 15)
+    backtesting_start = datetime(2019, 8, 15)
     backtesting_end = datetime(2024, 8, 15)
-
-    # backtesting_start = datetime(2022, 8, 15)
-    # backtesting_end = datetime(2023, 8, 15)
-
-    # backtesting_start = datetime(2021, 8, 15)
-    # backtesting_end = datetime(2022, 8, 15)
-
-    # backtesting_start = datetime(2020, 8, 15)
-    # backtesting_end = datetime(2021, 8, 15)
 
     data_source = YahooDataBacktesting(
         datetime_start=backtesting_start,
