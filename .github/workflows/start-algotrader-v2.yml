@@ -9,11 +9,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Set up Node.js 20
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
-
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -25,6 +20,10 @@ jobs:
           # Decrypt the stocks files
           openssl enc -d -aes-256-cbc -in file_a.txt.enc -out file_a.txt -pass pass:${{ secrets.DECRYPTION_PASSWORD }}
           openssl enc -d -aes-256-cbc -in file_b.txt.enc -out file_b.txt -pass pass:${{ secrets.DECRYPTION_PASSWORD }}
+
+      - name: Verify decrypted files
+        run: |
+          ls -la strategy.py file_a.txt file_b.txt
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
